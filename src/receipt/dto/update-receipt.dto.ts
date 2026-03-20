@@ -3,7 +3,7 @@ import { IsDateString , IsNumber, IsOptional, IsString, Min} from 'class-validat
 export class UpdateReceiptDto {
     @IsOptional()
     @IsDateString()
-    isUsedAt?: Date;
+    issuedAt?: Date;
 
     @IsOptional()
     @IsString()

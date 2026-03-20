@@ -36,6 +36,6 @@ export class ReciptsController {
 
     @Delete(':id')
     remove(@Param('id')id: string) {
-        return
+        return this.receiptsService.remove(id);
     }
 }   

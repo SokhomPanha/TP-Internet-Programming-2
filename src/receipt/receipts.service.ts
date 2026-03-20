@@ -14,7 +14,7 @@ export class ReceiptsService {
   ) {}
 
   async findAll() {
-    return this.receiptRepo.find({ order: { isUsedAt: 'DESC' } });
+    return this.receiptRepo.find({ order: { issuedAt: 'DESC' } });
   }
 
   async findOne(receiptId: string) {
@@ -29,7 +29,7 @@ export class ReceiptsService {
     const receipt = this.receiptRepo.create({
       name: dto.name,
       price: dto.price,
-      isUsedAt: new Date(dto.isUsedAt),
+      issuedAt: new Date(dto.issuedAt),
     });
     return this.receiptRepo.save(receipt);
   }
@@ -46,8 +46,8 @@ export class ReceiptsService {
     if (dto.price !== undefined) {
         receipt.price = dto.price;
     }
-    if (dto.isUsedAt !== undefined) {
-        receipt.isUsedAt = new Date(dto.isUsedAt);
+    if (dto.issuedAt !== undefined) {
+        receipt.issuedAt = new Date(dto.issuedAt);
     }
 
     return this.receiptRepo.save(receipt);

@@ -9,7 +9,7 @@ export class  Receipt{
     name: String;
 
     @Column({type: 'timestamp'})
-    isUsedAt: Date;
+    issuedAt: Date;
 
     @Column('decimal', {precision: 10, scale: 2})
     price: number;

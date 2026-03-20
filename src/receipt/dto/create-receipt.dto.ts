@@ -3,7 +3,7 @@ import { IsDateString, IsNotEmpty, IsNumber, IsString, Min} from 'class-validato
 
 export class CreateReceiptDto {
     @IsDateString()
-    isUsedAt: Date;
+    issuedAt: Date;
 
     @IsString()
     @IsNotEmpty()
