@@ -1,0 +1,31 @@
+psql -h localhost -p 5432 -U user -d TP02-DB
+
+Command,What it does
+\dt,Display Tables: Shows a list of all tables (you should see receipts).
+\d receipts,"Describe Table: Shows the columns, types (Decimal, Timestamp), and Primary Key."
+\q,Quit: Exit the database and go back to your normal terminal.
+
+SELECT * FROM receipts;
+
+SELECT name, price FROM receipts;
+
+
+- For RxJS (Reactive Extensions):
+Bash
+
+npm install rxjs
+
+- For TypeORM (Database):
+Bash
+
+npm install typeorm
+
+- For Class Validator (Data Validation):
+Bash
+
+npm install class-validator class-transformer
+
+- For NestJS Config (Environment Variables):
+Bash
+
+npm install @nestjs/config

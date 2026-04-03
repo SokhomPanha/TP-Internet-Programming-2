@@ -4,6 +4,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Receipt } from '../database/entities/receipts.entity';
+import { NotificationsService } from 'src/notifications/notifications.service';
 
 
 @Injectable()
@@ -11,6 +12,7 @@ export class ReceiptsService {
   constructor(
     @InjectRepository(Receipt)
     private readonly receiptRepo: Repository<Receipt>,
+    private notifications: NotificationsService
   ) {}
 
   async findAll() {
@@ -31,6 +33,7 @@ export class ReceiptsService {
       price: dto.price,
       issuedAt: new Date(dto.issuedAt),
     });
+    
     return this.receiptRepo.save(receipt);
   }
 
@@ -61,4 +64,6 @@ export class ReceiptsService {
     await this.receiptRepo.remove(receipt);
     return {deleted : true, receiptId}
   }
+
+
 }

@@ -25,10 +25,6 @@ export class ReciptsController {
         return this.receiptsService.create(dto);
     }
 
-    // @Put(':id')
-    // async update(@Param('id') id: string, @Body() dto: UpdateReceiptDto) {
-    //     return this.receiptsService.update(id, dto);
-    // }
     @Patch(':id')
     update(@Param('id') id: string, @Body() dto: UpdateReceiptDto) {
         return this.receiptsService.update(id, dto);

@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ReceiptModule } from './receipt/receipt.module';
 import { ConfigModule } from '@nestjs/config';
+import { NotificationsModule } from './notifications/notifications.module';
+
 
 
 @Module({
@@ -20,6 +22,7 @@ import { ConfigModule } from '@nestjs/config';
       synchronize: true,
     }),
     ReceiptModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
