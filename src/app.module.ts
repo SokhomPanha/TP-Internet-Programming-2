@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ReceiptModule } from './receipt/receipt.module';
 import { ConfigModule } from '@nestjs/config';
 import { NotificationsModule } from './notifications/notifications.module';
+import { OrdersModule } from './orders/orders.module';
+import { CoreModule } from './core/core.module';
 
 
 
@@ -23,6 +25,8 @@ import { NotificationsModule } from './notifications/notifications.module';
     }),
     ReceiptModule,
     NotificationsModule,
+    OrdersModule,
+    CoreModule,
   ],
   controllers: [AppController],
   providers: [AppService],

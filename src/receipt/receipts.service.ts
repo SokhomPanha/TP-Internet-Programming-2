@@ -33,8 +33,16 @@ export class ReceiptsService {
       price: dto.price,
       issuedAt: new Date(dto.issuedAt),
     });
+
+  
+    const saved = await this.receiptRepo.save(receipt);
+
+    this.notifications.notify('receipt_created', {
+      receiptId: saved.receiptId,
+      price: saved.price,
+    })
     
-    return this.receiptRepo.save(receipt);
+    return saved;
   }
 
   async update(id: string, dto: UpdateReceiptDto){
