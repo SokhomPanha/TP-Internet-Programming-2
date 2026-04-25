@@ -6,17 +6,17 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
-    ClientsModule.register([       // ✅ this was missing
+    ClientsModule.register([       
       {
         name: 'ORDER_SERVICE',
         transport: Transport.TCP,
-        options: {
-          host: '127.0.0.1',
-          port: 8888,
-        },
+        // options: {
+        //   host: '127.0.0.1',
+        //   port: 8888,
+        // },
       },
     ]),
-    forwardRef(() => NotificationsModule), // ✅ keep forwardRef
+    forwardRef(() => NotificationsModule), 
   ],
   providers: [OrdersService],
   controllers: [OrdersController],
