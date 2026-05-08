@@ -10,10 +10,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: 'ORDER_SERVICE',
         transport: Transport.TCP,
-        // options: {
-        //   host: '127.0.0.1',
-        //   port: 8888,
-        // },
       },
     ]),
     forwardRef(() => NotificationsModule), 

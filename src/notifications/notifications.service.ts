@@ -1,5 +1,6 @@
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { EVENT_PUBLISHER } from 'src/core/tokens';
+
 
 type EventPublisher = { publish: (event: string, payload: any) => void };
 
