@@ -32,8 +32,8 @@ import { GraphqlModule } from './graphql/graphql.module';
     // ✅ ONE GraphQLModule only — schema-first for now (Part A)
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      typePaths: [join(process.cwd(), 'src/graphql/schema/*.graphql')],
-      //autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // ← uncomment for Part B
+      //typePaths: [join(process.cwd(), 'src/graphql/schema/*.graphql')],
+      autoSchemaFile: join(process.cwd(), 'src/graphql/schema.gql'), // ← uncomment for Part B
       playground: true,
     }),
 
